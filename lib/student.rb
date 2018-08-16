@@ -7,6 +7,7 @@ class Student
     new_student.id = row[0]
     new_student.name = row[1]
     new_student.grade = row[2]
+    new_student
   end
 
   def self.all
@@ -14,8 +15,9 @@ class Student
     sql = <<-SQL
     SELECT * FROM students
     SQL
-    DB[:conn].execute(sql).each do |row|
     # remember each row should be a new instance of the Student class
+      DB[:conn].execute(sql).each do |row|
+        self.new_from_db
   end
 
   def self.find_by_name(name)

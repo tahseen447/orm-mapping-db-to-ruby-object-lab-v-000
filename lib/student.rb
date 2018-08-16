@@ -17,7 +17,7 @@ class Student
     SQL
     # remember each row should be a new instance of the Student class
       DB[:conn].execute(sql).map do |row|
-        self.new_from_db
+        self.new_from_db(row)
       end
   end
 

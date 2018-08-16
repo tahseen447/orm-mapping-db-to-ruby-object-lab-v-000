@@ -24,7 +24,9 @@ class Student
   def self.find_by_name(name)
     # find the student in the database given a name
     sql = <<-SQL
-    select * from students where name = ? LIMIT 1
+    SELECT * FROM students
+    where name = ?
+    LIMIT 1
     SQL
     # return a new instance of the Student class
       DB[:conn].execute(sql).each do |row|

@@ -29,7 +29,7 @@ class Student
     # return a new instance of the Student class
       DB[:conn].execute(sql).each do |row|
         self.new_from_db
-      end
+      end.first
   end
 
   def save

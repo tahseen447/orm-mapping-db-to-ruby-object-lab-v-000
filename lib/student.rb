@@ -29,7 +29,7 @@ class Student
     LIMIT 1
     SQL
     # return a new instance of the Student class
-      DB[:conn].execute(sql).each do |row|
+      DB[:conn].execute(sql, name).each do |row|
         self.new_from_db(row)
       end.first
   end

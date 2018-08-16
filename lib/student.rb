@@ -14,7 +14,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).each do |row|
     # remember each row should be a new instance of the Student class
   end
 

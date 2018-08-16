@@ -33,7 +33,8 @@ class Student
     end.first
   end
 
-
+  def all_students_in_grade_9
+    
 
   def save
     sql = <<-SQL
